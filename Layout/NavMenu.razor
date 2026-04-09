@@ -1,0 +1,25 @@
+<nav class="nav-links">
+    <NavLink href="" Match="NavLinkMatch.All">About</NavLink>
+    <NavLink href="experience">Experience</NavLink>
+    <NavLink href="accomplishments">Accomplishments</NavLink>
+    <NavLink href="education">Education</NavLink>
+</nav>
+
+<button class="nav-hamburger" @onclick="ToggleMenu" aria-label="Toggle navigation">
+    <span></span><span></span><span></span>
+</button>
+
+@if (!collapsed)
+{
+    <div class="nav-mobile" @onclick="ToggleMenu">
+        <NavLink href="" Match="NavLinkMatch.All">About</NavLink>
+        <NavLink href="experience">Experience</NavLink>
+        <NavLink href="accomplishments">Accomplishments</NavLink>
+        <NavLink href="education">Education</NavLink>
+    </div>
+}
+
+@code {
+    private bool collapsed = true;
+    private void ToggleMenu() => collapsed = !collapsed;
+}

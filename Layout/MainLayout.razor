@@ -1,0 +1,21 @@
+@inherits LayoutComponentBase
+
+<div class="scanlines" aria-hidden="true"></div>
+
+<header class="site-header">
+    <div class="header-inner">
+        <a class="brand" href="">DEVON<span class="brand-dot">.</span>VANNOTE</a>
+        <NavMenu />
+    </div>
+</header>
+
+<main class="site-main">
+    @Body
+</main>
+
+<footer class="site-footer">
+    <div class="footer-inner">
+        <span class="footer-copy">&copy; @DateTime.Now.Year DEVON S. VANNOTE</span>
+        <span class="footer-loc">CHICAGO&nbsp;// IL</span>
+    </div>
+</footer>
