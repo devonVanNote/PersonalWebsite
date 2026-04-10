@@ -160,6 +160,56 @@ code {
 .brand:hover { color: #fff; text-shadow: 0 0 12px #ff2d78, 0 0 30px #ff2d78; }
 .brand-dot { color: var(--cyan); text-shadow: var(--glow-cyan); }
 
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+/* =====================================================
+   Social links
+   ===================================================== */
+.social-links {
+    display: flex;
+    align-items: center;
+    gap: 0.1rem;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    color: var(--text-muted);
+    border: 1px solid transparent;
+    transition: color 0.2s, border-color 0.2s, box-shadow 0.2s, background 0.2s;
+}
+
+.social-link:hover {
+    color: var(--pink);
+    border-color: var(--border-pink);
+    box-shadow: var(--glow-pink);
+    background: rgba(255, 45, 120, 0.06);
+    text-shadow: none;
+}
+
+.social-link svg { display: block; flex-shrink: 0; }
+
+/* Social links row inside mobile menu */
+.nav-mobile-socials {
+    display: flex;
+    gap: 0.25rem;
+    padding: 0.75rem 1rem;
+    border-top: 1px solid rgba(255, 45, 120, 0.15);
+    margin-top: 0.25rem;
+}
+
+.nav-mobile-socials .social-link {
+    width: 40px;
+    height: 40px;
+}
+
 /* =====================================================
    Navigation
    ===================================================== */
