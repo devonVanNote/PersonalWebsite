@@ -1,63 +1,62 @@
-﻿/* =====================================================
-   Noctua — Design Tokens
-   Palette sourced from Noctua fan branding:
-     primary → tan/beige  #C8A060
-     secondary → brown    #7B3A00
-     accent → amber       #C89030
+/* =====================================================
+   Art Deco — Design Tokens
    ===================================================== */
 :root {
-    --bg:           #0D0800;
-    --bg-card:      #140E00;
-    --bg-card-alt:  #1C1400;
+    --bg:           #07090B;
+    --bg-card:      #0C1014;
+    --bg-card-alt:  #111820;
 
-    /* Noctua tan — primary */
-    --lime:         #C8A060;
-    --lime-bright:  #D4AC70;
-    --lime-light:   #E0C898;
+    /* Teal — primary accent */
+    --lime:         #00b0b2;
+    --lime-bright:  #20C4C6;
+    --lime-light:   #edf3af;
 
-    /* Noctua brown — secondary */
-    --jp-red:       #7B3A00;
-    --jp-red-bright:#9B4A00;
+    /* Dark steel blue — secondary */
+    --jp-red:       #3f647e;
+    --jp-red-bright:#507a96;
 
-    /* Noctua amber — accent */
-    --jp-yellow:    #C89030;
-    --jp-yellow-dim:#A87020;
+    /* Medium sky blue — tertiary */
+    --jp-yellow:    #688fad;
+    --jp-yellow-dim:#4d7291;
 
-    --text:         #EAD9B8;
-    --text-mid:     #D0BC98;
-    --text-muted:   #B09878;
+    --text:         #d9d9d9;
+    --text-mid:     #b4c8d8;
+    --text-muted:   #8898A8;
 
-    --border-lime:   rgba(200, 160, 96, 0.5);
-    --border-red:    rgba(123, 58, 0, 0.45);
-    --border-yellow: rgba(200, 144, 48, 0.45);
+    --border-lime:   rgba(0, 176, 178, 0.35);
+    --border-red:    rgba(63, 100, 126, 0.4);
+    --border-yellow: rgba(104, 143, 173, 0.4);
 
-    --glow-lime:    0 0 10px rgba(200, 160, 96, 0.7), 0 0 28px rgba(200, 160, 96, 0.3);
-    --glow-red:     0 0 10px rgba(123, 58, 0, 0.65),  0 0 28px rgba(123, 58, 0, 0.28);
-    --glow-yellow:  0 0 10px rgba(200, 144, 48, 0.7),  0 0 28px rgba(200, 144, 48, 0.3);
+    --glow-lime:    0 0 10px rgba(0, 176, 178, 0.55),  0 0 28px rgba(0, 176, 178, 0.2);
+    --glow-red:     0 0 10px rgba(63, 100, 126, 0.5),   0 0 24px rgba(63, 100, 126, 0.18);
+    --glow-yellow:  0 0 10px rgba(104, 143, 173, 0.5),  0 0 28px rgba(104, 143, 173, 0.18);
 
-    --shadow:       0 8px 32px rgba(0, 0, 0, 0.6);
-    --shadow-sm:    0 4px 16px rgba(0, 0, 0, 0.45);
+    --shadow:       0 8px 40px rgba(0, 0, 0, 0.8);
+    --shadow-sm:    0 4px 20px rgba(0, 0, 0, 0.6);
 }
 
 /* =====================================================
    Animations
    ===================================================== */
-@keyframes amber-flicker {
-    0%,  100% { opacity: 1; }
-    42%        { opacity: 0.88; }
-    44%        { opacity: 1; }
-    78%        { opacity: 0.93; }
+@keyframes gold-shimmer {
+    0%, 100% { opacity: 1; }
+    35%       { opacity: 0.82; }
+    70%       { opacity: 0.94; }
 }
 
-@keyframes fog-drift {
-    0%, 100% { transform: translate(0, 0)    scale(1); }
-    33%       { transform: translate(50px, -30px) scale(1.06); }
-    66%       { transform: translate(-30px, 20px) scale(0.95); }
-}
-
-@keyframes electric-pulse {
+@keyframes deco-pulse {
     0%, 100% { box-shadow: var(--glow-lime); }
-    50%       { box-shadow: 0 0 18px rgba(200, 160, 96, 0.9), 0 0 40px rgba(200, 160, 96, 0.45); }
+    50%       { box-shadow: 0 0 20px rgba(0, 176, 178, 0.75), 0 0 50px rgba(0, 176, 178, 0.3); }
+}
+
+@keyframes deco-drift {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    50%       { transform: translate(15px, -12px) scale(1.03); }
+}
+
+@keyframes bio-pulse {
+    0%, 100% { opacity: 1; }
+    50%       { opacity: 0.6; }
 }
 
 @keyframes scan-terminal {
@@ -65,45 +64,39 @@
     100% { top: 110%; }
 }
 
-@keyframes bio-pulse {
-    0%, 100% { opacity: 1; }
-    50%       { opacity: 0.65; }
-}
-
 /* =====================================================
    Reset & base
    ===================================================== */
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; outline: none; }
 
 html, body {
     min-height: 100vh;
     background: var(--bg);
     color: var(--text);
-    font-family: 'Rajdhani', system-ui, sans-serif;
-    font-size: 16px;
-    font-weight: 500;
-    line-height: 1.6;
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.75;
 }
 
 ::selection { background: var(--lime); color: #000; }
 
-a { color: var(--lime); text-decoration: none; transition: color 0.15s, text-shadow 0.15s; }
+a { color: var(--lime); text-decoration: none; transition: color 0.2s, text-shadow 0.2s; }
 a:hover { color: var(--lime-bright); text-shadow: var(--glow-lime); }
 
-strong { color: var(--lime-bright); font-weight: 700; }
+strong { color: var(--lime-light); font-weight: 600; }
 
 code {
     font-family: 'Courier New', monospace;
-    background: rgba(200, 160, 96, 0.08);
-    border: 1px solid rgba(200, 160, 96, 0.2);
+    background: rgba(0, 176, 178, 0.06);
+    border: 1px solid rgba(0, 176, 178, 0.2);
     padding: 1px 6px;
-    border-radius: 2px;
-    font-size: 0.88em;
+    font-size: 0.85em;
     color: var(--lime);
 }
 
 /* =====================================================
-   Background — jungle fog
+   Background — Art Deco herringbone
    ===================================================== */
 .bg-jp {
     position: fixed;
@@ -113,30 +106,29 @@ code {
     overflow: hidden;
 }
 
-/* Explorer body — lime green mist, bottom-left */
+/* Fine herringbone / diamond-lattice grid */
 .bg-jp::before {
     content: '';
     position: absolute;
-    width: 800px;
-    height: 800px;
-    bottom: -250px;
-    left: -200px;
-    background: radial-gradient(circle, rgba(120, 80, 0, 0.55) 0%, transparent 65%);
-    filter: blur(100px);
-    animation: fog-drift 20s ease-in-out infinite;
+    inset: 0;
+    background-image:
+        linear-gradient(60deg,  rgba(0, 176, 178, 0.022) 1px, transparent 1px),
+        linear-gradient(-60deg, rgba(0, 176, 178, 0.022) 1px, transparent 1px),
+        linear-gradient(rgba(0, 176, 178, 0.016) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 176, 178, 0.016) 1px, transparent 1px);
+    background-size: 40px 40px, 40px 40px, 40px 40px, 40px 40px;
 }
 
-/* Explorer stripe — red glow, top-right */
+/* Soft gold bloom rising from bottom — ambient warmth */
 .bg-jp::after {
     content: '';
     position: absolute;
-    width: 600px;
-    height: 600px;
-    top: -150px;
-    right: -150px;
-    background: radial-gradient(circle, rgba(123, 58, 0, 0.28) 0%, transparent 65%);
-    filter: blur(90px);
-    animation: fog-drift 16s ease-in-out infinite reverse;
+    width: 130%;
+    height: 65%;
+    bottom: -30%;
+    left: -15%;
+    background: radial-gradient(ellipse at 50% 100%, rgba(0, 176, 178, 0.065) 0%, transparent 65%);
+    animation: deco-drift 28s ease-in-out infinite;
 }
 
 /* =====================================================
@@ -146,18 +138,18 @@ code {
     position: sticky;
     top: 0;
     z-index: 100;
-    background: rgba(13, 8, 0, 0.92);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
+    background: rgba(8, 8, 7, 0.96);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     border-bottom: 1px solid var(--border-lime);
-    box-shadow: 0 1px 30px rgba(200, 160, 96, 0.1);
+    box-shadow: 0 2px 0 rgba(0, 176, 178, 0.055), 0 6px 32px rgba(0, 0, 0, 0.65);
 }
 
 .header-inner {
     max-width: 1100px;
     margin: 0 auto;
     padding: 0 1.5rem;
-    height: 62px;
+    height: 64px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -165,16 +157,17 @@ code {
 }
 
 .brand {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 1.4rem;
+    font-family: 'Poiret One', sans-serif;
+    font-size: 1.2rem;
     font-weight: 400;
     color: var(--lime);
-    letter-spacing: 0.12em;
+    letter-spacing: 0.28em;
     white-space: nowrap;
-    animation: amber-flicker 6s ease-in-out infinite;
+    animation: gold-shimmer 7s ease-in-out infinite;
 }
 .brand:hover {
     color: var(--lime-bright);
+    text-shadow: var(--glow-lime);
 }
 
 .header-right {
@@ -207,7 +200,7 @@ code {
     color: var(--lime);
     border-color: var(--border-lime);
     box-shadow: var(--glow-lime);
-    background: rgba(200, 160, 96, 0.07);
+    background: rgba(0, 176, 178, 0.055);
     text-shadow: none;
 }
 
@@ -217,7 +210,7 @@ code {
     display: flex;
     gap: 0.25rem;
     padding: 0.75rem 1rem;
-    border-top: 1px solid rgba(200, 160, 96, 0.15);
+    border-top: 1px solid rgba(0, 176, 178, 0.12);
     margin-top: 0.25rem;
 }
 
@@ -236,11 +229,11 @@ code {
 
 .nav-links a {
     position: relative;
-    padding: 0.45rem 1rem;
-    font-family: 'Rajdhani', sans-serif;
-    font-size: 0.82rem;
-    font-weight: 600;
-    letter-spacing: 0.16em;
+    padding: 0.5rem 0.95rem;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.65rem;
+    font-weight: 300;
+    letter-spacing: 0.3em;
     text-transform: uppercase;
     color: var(--text-muted);
     transition: color 0.2s;
@@ -253,10 +246,10 @@ code {
     left: 50%;
     transform: translateX(-50%);
     width: 0;
-    height: 2px;
+    height: 1px;
     background: var(--lime);
     box-shadow: var(--glow-lime);
-    transition: width 0.25s ease;
+    transition: width 0.3s ease;
 }
 
 .nav-links a:hover,
@@ -266,7 +259,7 @@ code {
 }
 
 .nav-links a:hover::after,
-.nav-links a.active::after { width: 80%; }
+.nav-links a.active::after { width: 65%; }
 
 /* Hamburger */
 .nav-hamburger {
@@ -283,7 +276,7 @@ code {
 .nav-hamburger span {
     display: block;
     width: 20px;
-    height: 2px;
+    height: 1px;
     background: var(--text-muted);
     transition: background 0.2s;
 }
@@ -292,31 +285,31 @@ code {
 /* Mobile menu */
 .nav-mobile {
     position: absolute;
-    top: 62px;
+    top: 64px;
     left: 0;
     right: 0;
-    background: rgba(13, 8, 0, 0.98);
+    background: rgba(8, 8, 7, 0.98);
     border-bottom: 1px solid var(--border-lime);
     display: flex;
     flex-direction: column;
     z-index: 99;
-    box-shadow: 0 8px 30px rgba(200, 160, 96, 0.12);
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.7);
 }
 
 .nav-mobile a {
     padding: 1rem 1.5rem;
-    font-family: 'Rajdhani', sans-serif;
-    font-size: 1rem;
-    font-weight: 600;
-    letter-spacing: 0.14em;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 300;
+    letter-spacing: 0.3em;
     text-transform: uppercase;
     color: var(--text-muted);
-    border-bottom: 1px solid rgba(200, 160, 96, 0.1);
+    border-bottom: 1px solid rgba(0, 176, 178, 0.07);
     transition: color 0.15s, background 0.15s;
 }
 .nav-mobile a:last-child { border-bottom: none; }
 .nav-mobile a:hover,
-.nav-mobile a.active { color: var(--lime); background: rgba(200, 160, 96, 0.05); }
+.nav-mobile a.active { color: var(--lime); background: rgba(0, 176, 178, 0.03); }
 
 /* =====================================================
    Footer
@@ -324,8 +317,20 @@ code {
 .site-footer {
     border-top: 1px solid var(--border-lime);
     margin-top: 5rem;
-    padding: 1.5rem;
-    box-shadow: 0 -1px 20px rgba(200, 160, 96, 0.06);
+    padding: 1.75rem 1.5rem 1.5rem;
+    box-shadow: 0 -1px 20px rgba(0, 176, 178, 0.04);
+    position: relative;
+}
+
+/* Art Deco ornament row */
+.site-footer::before {
+    content: '◆  ◆  ◆';
+    display: block;
+    text-align: center;
+    font-size: 0.38rem;
+    color: rgba(0, 176, 178, 0.38);
+    letter-spacing: 0.6em;
+    margin-bottom: 1.25rem;
 }
 
 .footer-inner {
@@ -333,8 +338,10 @@ code {
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
-    font-size: 0.78rem;
-    letter-spacing: 0.1em;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.62rem;
+    font-weight: 300;
+    letter-spacing: 0.25em;
     text-transform: uppercase;
     color: var(--text-muted);
 }
@@ -349,33 +356,36 @@ code {
 }
 
 .section-title {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 2rem;
-    font-weight: 400;
-    letter-spacing: 0.2em;
-    color: var(--text);
-    margin-bottom: 2.5rem;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 300;
+    letter-spacing: 0.55em;
+    color: var(--lime);
+    text-transform: uppercase;
+    margin-bottom: 2.75rem;
     display: flex;
     align-items: center;
-    gap: 0.75rem;
+    gap: 1rem;
 }
 
+/* Diamond ornament prefix */
 .section-title::before {
-    content: '>>';
+    content: '◆';
     color: var(--lime);
-    font-size: 1rem;
+    font-size: 0.52rem;
     letter-spacing: 0;
-    font-family: 'Courier New', monospace;
-    font-weight: 700;
+    flex-shrink: 0;
+    opacity: 0.8;
+    font-family: sans-serif;
 }
 
+/* Double-line extending rule (top border + offset shadow = two lines) */
 .section-title::after {
     content: '';
     flex: 1;
-    height: 1px;
-    background: linear-gradient(to right, var(--lime), var(--jp-red), transparent);
-    box-shadow: 0 0 8px rgba(200, 160, 96, 0.4);
-    margin-left: 0.5rem;
+    border-top: 1px solid rgba(0, 176, 178, 0.42);
+    box-shadow: 0 3px 0 rgba(0, 176, 178, 0.1);
+    margin-left: 0.25rem;
 }
 
 /* =====================================================
@@ -387,26 +397,26 @@ code {
     overflow: hidden;
 }
 
-/* Electric fence grid */
+/* Art Deco fine square grid */
 .hero::before {
     content: '';
     position: absolute;
     inset: 0;
     background-image:
-        linear-gradient(rgba(200, 160, 96, 0.05) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(200, 160, 96, 0.03) 1px, transparent 1px);
-    background-size: 48px 48px;
+        linear-gradient(rgba(0, 176, 178, 0.032) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 176, 178, 0.02) 1px, transparent 1px);
+    background-size: 64px 64px;
     pointer-events: none;
 }
 
-/* Red stripe glow + lime body glow */
+/* Atmospheric gold glow — corners */
 .hero::after {
     content: '';
     position: absolute;
     inset: 0;
     background:
-        radial-gradient(ellipse 50% 60% at 80% 70%, rgba(123, 58, 0, 0.15) 0%, transparent 70%),
-        radial-gradient(ellipse 40% 50% at 10% 40%, rgba(120, 80, 0, 0.18) 0%, transparent 70%);
+        radial-gradient(ellipse 50% 60% at 82% 72%, rgba(63, 100, 126, 0.12) 0%, transparent 70%),
+        radial-gradient(ellipse 42% 48% at 8%  38%, rgba(63, 100, 126, 0.09) 0%, transparent 70%);
     pointer-events: none;
 }
 
@@ -420,83 +430,86 @@ code {
 .hero-identity {
     display: flex;
     align-items: center;
-    gap: 1.75rem;
-    margin-bottom: 1rem;
+    gap: 2rem;
+    margin-bottom: 1.25rem;
 }
 
+/* Square photo with Art Deco double-frame */
 .hero-photo {
-    width: 110px;
-    height: 110px;
-    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    border-radius: 0;
     object-fit: cover;
-    border: 2px solid var(--lime);
-    box-shadow: 0 0 0 3px rgba(200, 160, 96, 0.2), var(--glow-lime);
+    object-position: center top;
+    border: 1px solid var(--lime);
+    box-shadow: var(--glow-lime);
     flex-shrink: 0;
 }
 
 .hero-tag {
-    font-family: 'Courier New', monospace;
-    font-size: 0.78rem;
-    font-weight: 700;
-    letter-spacing: 0.22em;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.65rem;
+    font-weight: 300;
+    letter-spacing: 0.4em;
     color: var(--lime);
     text-transform: uppercase;
-    margin-bottom: 1rem;
-    animation: bio-pulse 3s ease-in-out infinite;
+    margin-bottom: 1.1rem;
+    animation: bio-pulse 4s ease-in-out infinite;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.65rem;
 }
 
-/* Glitch — kept as subtle amber chromatic aberration */
+.hero-tag::before,
+.hero-tag::after {
+    content: '◆';
+    font-size: 0.38rem;
+    opacity: 0.65;
+    flex-shrink: 0;
+}
+
+/* Glitch disabled — clean Art Deco name */
 .glitch { position: relative; display: inline-block; }
-
-.glitch::before {
-    content: attr(data-text);
-    position: absolute;
-    inset: 0;
-    color: rgba(200, 160, 96, 0.35);
-    transform: translate(-2px, 0);
-    pointer-events: none;
-    clip-path: inset(30% 0 50% 0);
-}
-
-.glitch::after { display: none; }
+.glitch::before { display: none; }
+.glitch::after  { display: none; }
 
 .hero-name-wrap {
     position: relative;
     display: inline-block;
-    overflow: hidden;
+    overflow: visible;
     margin-bottom: 0;
 }
-
-.hero-name-wrap::after { display: none; }
-
+.hero-name-wrap::after  { display: none; }
 .hero-name-wrap::before { display: none; }
 
 .hero-name {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(2.4rem, 5.5vw, 4rem);
+    font-family: 'Poiret One', sans-serif;
+    font-size: clamp(2.5rem, 5.8vw, 4.4rem);
     font-weight: 400;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.14em;
     color: var(--lime-light);
-    line-height: 1.0;
+    line-height: 1.05;
     margin-bottom: 0.5rem;
-    animation: amber-flicker 8s ease-in-out infinite;
+    animation: gold-shimmer 9s ease-in-out infinite;
 }
 
 .hero-title {
-    font-family: 'Rajdhani', sans-serif;
-    font-size: clamp(0.9rem, 2vw, 1.15rem);
-    font-weight: 600;
-    letter-spacing: 0.2em;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: clamp(0.62rem, 1.3vw, 0.8rem);
+    font-weight: 300;
+    letter-spacing: 0.38em;
     text-transform: uppercase;
     color: var(--lime);
-    margin-bottom: 0.35rem;
+    margin-bottom: 0.4rem;
 }
 
 .hero-location {
-    font-size: 0.9rem;
-    letter-spacing: 0.1em;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.62rem;
+    font-weight: 300;
+    letter-spacing: 0.3em;
     color: var(--text-muted);
-    margin-bottom: 1.25rem;
+    margin-bottom: 1.5rem;
     text-transform: uppercase;
 }
 
@@ -504,32 +517,35 @@ code {
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;
-    margin-bottom: 1.25rem;
+    margin-bottom: 1.5rem;
 }
 
 .contact-link {
+    font-family: 'Josefin Sans', sans-serif;
     color: var(--text-muted);
-    font-size: 0.9rem;
-    letter-spacing: 0.06em;
-    padding: 0.35rem 0.9rem;
-    border: 1px solid rgba(200, 160, 96, 0.3);
+    font-size: 0.65rem;
+    font-weight: 300;
+    letter-spacing: 0.1em;
+    padding: 0.4rem 1rem;
+    border: 1px solid rgba(0, 176, 178, 0.25);
     transition: all 0.2s;
+    text-transform: uppercase;
 }
 
-.contact-link::before { content: '↗  '; color: var(--lime); }
+.contact-link::before { content: '◈  '; color: var(--lime); }
 
 .contact-link:hover {
     color: var(--lime-bright);
     text-shadow: none;
     border-color: var(--lime);
     box-shadow: var(--glow-lime);
-    background: rgba(200, 160, 96, 0.07);
+    background: rgba(0, 176, 178, 0.055);
 }
 
 .hero-skills {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.5rem;
+    gap: 0.4rem;
 }
 
 /* =====================================================
@@ -537,33 +553,32 @@ code {
    ===================================================== */
 .skill-badge {
     display: inline-block;
-    padding: 0.2rem 0.75rem;
-    font-family: 'Rajdhani', sans-serif;
-    font-size: 0.78rem;
-    font-weight: 600;
-    letter-spacing: 0.12em;
+    padding: 0.2rem 0.9rem;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.6rem;
+    font-weight: 300;
+    letter-spacing: 0.2em;
     text-transform: uppercase;
     color: var(--lime);
-    background: rgba(200, 160, 96, 0.08);
+    background: rgba(0, 176, 178, 0.055);
     border: 1px solid var(--border-lime);
-    box-shadow: 0 0 8px rgba(200, 160, 96, 0.1);
     transition: all 0.2s;
 }
 
 .skill-badge:hover {
-    background: rgba(200, 160, 96, 0.16);
+    background: rgba(0, 176, 178, 0.12);
     box-shadow: var(--glow-lime);
 }
 
 .skill-badge.secondary {
-    color: var(--lime);
-    background: rgba(200, 160, 96, 0.07);
-    border-color: var(--border-lime);
-    box-shadow: 0 0 8px rgba(200, 160, 96, 0.08);
+    color: var(--text-muted);
+    background: rgba(0, 176, 178, 0.025);
+    border-color: rgba(0, 176, 178, 0.18);
 }
 
 .skill-badge.secondary:hover {
-    background: rgba(200, 160, 96, 0.14);
+    color: var(--lime);
+    background: rgba(0, 176, 178, 0.07);
     box-shadow: var(--glow-lime);
 }
 
@@ -573,28 +588,21 @@ code {
 .about-card {
     background: var(--bg-card);
     border: 1px solid var(--border-lime);
-    border-left: 3px solid var(--lime);
-    padding: 2rem;
+    border-left: 2px solid var(--lime);
+    padding: 2rem 2.25rem;
     margin-bottom: 1.5rem;
-    box-shadow: -4px 0 20px rgba(200, 160, 96, 0.08), inset 0 0 30px rgba(200, 160, 96, 0.02);
+    box-shadow: -3px 0 20px rgba(0, 176, 178, 0.065), inset 0 0 40px rgba(0, 176, 178, 0.018);
     position: relative;
     overflow: hidden;
 }
 
-/* Hazard stripe accent — top edge */
+/* Gold gradient top accent — replaces industrial hazard stripe */
 .about-card::before {
     content: '';
     position: absolute;
     top: 0; left: 0; right: 0;
-    height: 3px;
-    background: repeating-linear-gradient(
-        90deg,
-        var(--jp-yellow)    0px,
-        var(--jp-yellow)    12px,
-        #000                12px,
-        #000                24px
-    );
-    opacity: 0.5;
+    height: 1px;
+    background: linear-gradient(90deg, var(--lime) 0%, rgba(0, 176, 178, 0.35) 50%, transparent 100%);
 }
 
 .about-card p { color: var(--text); margin-bottom: 0.85rem; }
@@ -612,7 +620,7 @@ code {
     display: flex;
     flex-direction: column;
     background: var(--bg-card);
-    padding: 0.9rem 1.5rem;
+    padding: 1rem 1.5rem;
     position: relative;
     overflow: hidden;
     transition: background 0.2s;
@@ -623,19 +631,19 @@ code {
     position: absolute;
     bottom: 0; left: 0;
     width: 0;
-    height: 2px;
-    background: linear-gradient(to right, var(--lime), var(--jp-red));
+    height: 1px;
+    background: var(--lime);
     box-shadow: var(--glow-lime);
-    transition: width 0.3s ease;
+    transition: width 0.35s ease;
 }
 
 .ql-card:hover { background: var(--bg-card-alt); }
 .ql-card:hover::before { width: 100%; }
-.ql-card:hover .ql-label { color: var(--lime); text-shadow: var(--glow-lime); }
+.ql-card:hover .ql-label { color: var(--lime); }
 
 .ql-label {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 1.2rem;
+    font-family: 'Poiret One', sans-serif;
+    font-size: 1.1rem;
     font-weight: 400;
     letter-spacing: 0.12em;
     text-transform: uppercase;
@@ -644,11 +652,13 @@ code {
 }
 
 .ql-sub {
-    font-size: 0.8rem;
-    letter-spacing: 0.06em;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.6rem;
+    font-weight: 300;
+    letter-spacing: 0.18em;
     color: var(--text-muted);
     margin-top: 0.3rem;
-    font-family: 'Courier New', monospace;
+    text-transform: uppercase;
 }
 
 /* =====================================================
@@ -656,7 +666,7 @@ code {
    ===================================================== */
 .timeline {
     position: relative;
-    padding-left: 1.25rem;
+    padding-left: 1.5rem;
     display: flex;
     flex-direction: column;
     gap: 0;
@@ -668,9 +678,8 @@ code {
     left: 0;
     top: 8px;
     bottom: 0;
-    width: 2px;
-    background: linear-gradient(to bottom, var(--lime), var(--jp-red), transparent 90%);
-    box-shadow: 0 0 10px rgba(200, 160, 96, 0.4);
+    width: 1px;
+    background: linear-gradient(to bottom, var(--lime), rgba(0, 176, 178, 0.2), transparent 90%);
 }
 
 .timeline-item {
@@ -680,31 +689,40 @@ code {
     position: relative;
 }
 
+/* Hollow diamond marker — Art Deco */
 .timeline-marker {
     position: absolute;
-    left: -1.25rem;
+    left: -1.5rem;
     top: 6px;
     width: 10px;
     height: 10px;
-    background: var(--lime);
+    background: transparent;
+    border: 1px solid var(--lime);
     transform: rotate(45deg);
     box-shadow: var(--glow-lime);
     flex-shrink: 0;
-    margin-left: 4px;
+    margin-left: 5px;
 }
 
+/* Double-frame card via inset box-shadow */
 .timeline-card {
     flex: 1;
     background: var(--bg-card);
     border: 1px solid var(--border-lime);
     border-left: 2px solid var(--lime);
-    padding: 1.5rem 1.75rem;
-    box-shadow: -3px 0 16px rgba(200, 160, 96, 0.07);
-    transition: border-color 0.2s, box-shadow 0.2s;
+    padding: 1.75rem 2rem;
+    box-shadow:
+        -2px 0 16px rgba(0, 176, 178, 0.06),
+        inset 0 0 0 8px var(--bg-card),
+        inset 0 0 0 9px rgba(0, 176, 178, 0.06);
+    transition: box-shadow 0.25s;
 }
 
 .timeline-card:hover {
-    box-shadow: -4px 0 24px rgba(200, 160, 96, 0.16), inset 0 0 20px rgba(200, 160, 96, 0.03);
+    box-shadow:
+        -3px 0 24px rgba(0, 176, 178, 0.14),
+        inset 0 0 0 8px var(--bg-card),
+        inset 0 0 0 9px rgba(0, 176, 178, 0.1);
 }
 
 .job-header {
@@ -713,14 +731,14 @@ code {
     align-items: flex-start;
     flex-wrap: wrap;
     gap: 0.5rem;
-    padding-bottom: 0.85rem;
-    margin-bottom: 0.85rem;
-    border-bottom: 1px solid rgba(200, 160, 96, 0.15);
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid rgba(0, 176, 178, 0.12);
 }
 
 .job-title {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 1.25rem;
+    font-family: 'Poiret One', sans-serif;
+    font-size: 1.4rem;
     font-weight: 400;
     letter-spacing: 0.1em;
     text-transform: uppercase;
@@ -728,29 +746,32 @@ code {
 }
 
 .job-company {
-    font-size: 0.9rem;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.68rem;
     font-weight: 600;
-    letter-spacing: 0.06em;
+    letter-spacing: 0.2em;
     color: var(--lime);
-    margin-top: 0.2rem;
+    margin-top: 0.25rem;
+    text-transform: uppercase;
 }
 
 .job-date {
-    font-family: 'Courier New', monospace;
-    font-size: 0.75rem;
-    letter-spacing: 0.08em;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.62rem;
+    font-weight: 300;
+    letter-spacing: 0.14em;
     color: var(--text-muted);
     text-transform: uppercase;
     white-space: nowrap;
     flex-shrink: 0;
-    padding-top: 0.2rem;
+    padding-top: 0.3rem;
 }
 
 .job-description {
-    font-size: 0.95rem;
+    font-size: 1.05rem;
     color: var(--text);
-    margin-bottom: 1rem;
-    line-height: 1.65;
+    margin-bottom: 1.25rem;
+    line-height: 1.78;
 }
 
 .job-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
@@ -770,7 +791,7 @@ code {
     display: flex;
     gap: 1.25rem;
     background: var(--bg-card);
-    padding: 1.5rem;
+    padding: 1.75rem;
     position: relative;
     overflow: hidden;
     transition: background 0.2s;
@@ -782,35 +803,36 @@ code {
     top: 0; left: 0;
     width: 2px;
     height: 0;
-    background: linear-gradient(to bottom, var(--lime), var(--jp-red));
+    background: var(--lime);
     box-shadow: var(--glow-lime);
-    transition: height 0.35s ease;
+    transition: height 0.4s ease;
 }
 
 .accomplishment-card:hover { background: var(--bg-card-alt); }
 .accomplishment-card:hover::before { height: 100%; }
 
 .ac-icon {
-    font-size: 1.8rem;
+    font-size: 1.65rem;
     flex-shrink: 0;
     line-height: 1.2;
-    filter: drop-shadow(0 0 6px rgba(200, 160, 96, 0.4));
+    filter: drop-shadow(0 0 6px rgba(0, 176, 178, 0.32));
+    opacity: 0.85;
 }
 
 .ac-body h3 {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 1.1rem;
+    font-family: 'Poiret One', sans-serif;
+    font-size: 1.15rem;
     font-weight: 400;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
     color: var(--lime);
     margin-bottom: 0.5rem;
 }
 
 .ac-body p {
-    font-size: 0.9rem;
-    color: var(--text-muted);
-    line-height: 1.65;
+    font-size: 1rem;
+    color: var(--text-mid);
+    line-height: 1.72;
     margin-bottom: 0.85rem;
 }
 
@@ -822,9 +844,9 @@ code {
 .gamedev-card {
     background: var(--bg-card);
     border: 1px solid var(--border-lime);
-    border-left: 3px solid var(--lime);
-    padding: 2rem;
-    box-shadow: -4px 0 20px rgba(200, 160, 96, 0.08), inset 0 0 30px rgba(200, 160, 96, 0.02);
+    border-left: 2px solid var(--lime);
+    padding: 2rem 2.25rem;
+    box-shadow: -3px 0 20px rgba(0, 176, 178, 0.065), inset 0 0 40px rgba(0, 176, 178, 0.015);
     position: relative;
     overflow: hidden;
 }
@@ -833,15 +855,8 @@ code {
     content: '';
     position: absolute;
     top: 0; left: 0; right: 0;
-    height: 3px;
-    background: repeating-linear-gradient(
-        90deg,
-        var(--jp-yellow)    0px,
-        var(--jp-yellow)    12px,
-        #000                12px,
-        #000                24px
-    );
-    opacity: 0.45;
+    height: 1px;
+    background: linear-gradient(90deg, var(--lime), rgba(0, 176, 178, 0.3) 50%, transparent 100%);
 }
 
 .gamedev-header {
@@ -852,45 +867,45 @@ code {
     gap: 1rem;
     padding-bottom: 1.25rem;
     margin-bottom: 1.25rem;
-    border-bottom: 1px solid rgba(200, 160, 96, 0.15);
+    border-bottom: 1px solid rgba(0, 176, 178, 0.12);
 }
 
 .gamedev-title {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 1.8rem;
+    font-family: 'Poiret One', sans-serif;
+    font-size: 2rem;
     font-weight: 400;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
-    margin-bottom: 0.25rem;
+    margin-bottom: 0.3rem;
 }
 
 .gamedev-title a {
     color: var(--lime);
     transition: color 0.2s;
 }
-.gamedev-title a:hover {
-    color: var(--lime-bright);
-}
+.gamedev-title a:hover { color: var(--lime-bright); }
 
 .gamedev-subtitle {
-    font-size: 0.88rem;
-    letter-spacing: 0.06em;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.65rem;
+    font-weight: 300;
+    letter-spacing: 0.22em;
     color: var(--text-muted);
     text-transform: uppercase;
 }
 
-/* Yellow wheel button */
+/* Antique gold action button */
 .steam-btn {
     display: inline-block;
-    padding: 0.45rem 1.2rem;
-    font-family: 'Rajdhani', sans-serif;
-    font-size: 0.82rem;
-    font-weight: 700;
-    letter-spacing: 0.14em;
+    padding: 0.5rem 1.4rem;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
     text-transform: uppercase;
     color: #000;
     background: var(--jp-yellow);
-    border: 1px solid rgba(200, 144, 48, 0.8);
+    border: 1px solid rgba(104, 143, 173, 0.8);
     box-shadow: var(--glow-yellow);
     transition: all 0.2s;
     white-space: nowrap;
@@ -898,8 +913,8 @@ code {
 }
 .steam-btn:hover {
     color: #000;
-    background: #ffe033;
-    box-shadow: 0 0 18px rgba(200, 144, 48, 0.9), 0 0 40px rgba(200, 144, 48, 0.4);
+    background: #7BA8C8;
+    box-shadow: 0 0 18px rgba(104, 143, 173, 0.9), 0 0 40px rgba(104, 143, 173, 0.35);
     text-shadow: none;
     transform: translateY(-1px);
 }
@@ -907,15 +922,15 @@ code {
 .gamedev-card > p {
     color: var(--text);
     margin-bottom: 1.75rem;
-    line-height: 1.7;
+    line-height: 1.82;
 }
 
 .gamedev-sections {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 1px;
-    background: rgba(200, 160, 96, 0.15);
-    border: 1px solid rgba(200, 160, 96, 0.15);
+    background: rgba(0, 176, 178, 0.12);
+    border: 1px solid rgba(0, 176, 178, 0.12);
     margin-bottom: 1.5rem;
 }
 
@@ -924,10 +939,10 @@ code {
     padding: 1.1rem 1.25rem;
     transition: background 0.2s;
 }
-.gamedev-section:hover { background: #1A1000; }
+.gamedev-section:hover { background: #0C141C; }
 
 .gamedev-section h4 {
-    font-family: 'Bebas Neue', sans-serif;
+    font-family: 'Poiret One', sans-serif;
     font-size: 1rem;
     font-weight: 400;
     letter-spacing: 0.14em;
@@ -937,9 +952,9 @@ code {
 }
 
 .gamedev-section p {
-    font-size: 0.9rem;
-    color: var(--text-muted);
-    line-height: 1.65;
+    font-size: 1rem;
+    color: var(--text-mid);
+    line-height: 1.7;
     margin: 0;
 }
 
@@ -953,11 +968,11 @@ code {
     align-items: center;
     gap: 1.5rem;
     background: var(--bg-card);
-    border: 1px solid var(--border-red);
-    border-left: 3px solid var(--jp-red);
-    padding: 2rem;
+    border: 1px solid var(--border-lime);
+    border-left: 2px solid var(--lime);
+    padding: 2rem 2.25rem;
     max-width: 560px;
-    box-shadow: -4px 0 20px rgba(123, 58, 0, 0.07);
+    box-shadow: -3px 0 20px rgba(0, 176, 178, 0.06);
     position: relative;
     overflow: hidden;
 }
@@ -966,40 +981,37 @@ code {
     content: '';
     position: absolute;
     top: 0; left: 0; right: 0;
-    height: 3px;
-    background: repeating-linear-gradient(
-        90deg,
-        var(--jp-yellow)    0px,
-        var(--jp-yellow)    12px,
-        #000                12px,
-        #000                24px
-    );
-    opacity: 0.45;
+    height: 1px;
+    background: linear-gradient(90deg, var(--lime), rgba(0, 176, 178, 0.3) 50%, transparent 100%);
 }
 
-.edu-icon { font-size: 2.4rem; flex-shrink: 0; }
+.edu-icon { font-size: 2.4rem; flex-shrink: 0; opacity: 0.85; }
 
 .edu-degree {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 1.2rem;
+    font-family: 'Poiret One', sans-serif;
+    font-size: 1.25rem;
     font-weight: 400;
-    letter-spacing: 0.06em;
+    letter-spacing: 0.08em;
     text-transform: uppercase;
     color: var(--text);
-    margin-bottom: 0.3rem;
+    margin-bottom: 0.35rem;
 }
 
 .edu-school {
-    font-size: 1rem;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.75rem;
     font-weight: 600;
-    color: var(--jp-red-bright);
-    margin-bottom: 0.2rem;
+    letter-spacing: 0.18em;
+    color: var(--lime);
+    margin-bottom: 0.35rem;
+    text-transform: uppercase;
 }
 
 .edu-date {
-    font-family: 'Courier New', monospace;
-    font-size: 0.78rem;
-    letter-spacing: 0.08em;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.62rem;
+    font-weight: 300;
+    letter-spacing: 0.16em;
     text-transform: uppercase;
     color: var(--text-muted);
 }
@@ -1008,20 +1020,20 @@ code {
    Blazor error + loading
    ===================================================== */
 #blazor-error-ui {
-    background: rgba(13, 8, 0, 0.97);
+    background: rgba(8, 8, 7, 0.97);
     border-top: 1px solid var(--lime);
     color: var(--lime);
     bottom: 0;
-    box-shadow: 0 -4px 30px rgba(200, 160, 96, 0.2);
+    box-shadow: 0 -4px 30px rgba(0, 176, 178, 0.16);
     display: none;
     left: 0;
     padding: 0.6rem 1.25rem;
     position: fixed;
     width: 100%;
     z-index: 1000;
-    font-family: 'Rajdhani', sans-serif;
-    font-size: 0.9rem;
-    letter-spacing: 0.06em;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.18em;
     text-transform: uppercase;
 }
 #blazor-error-ui .dismiss { cursor: pointer; position: absolute; right: 1rem; top: 0.5rem; }
@@ -1036,7 +1048,7 @@ code {
 }
 .loading-progress circle {
     fill: none;
-    stroke: rgba(200, 160, 96, 0.15);
+    stroke: rgba(0, 176, 178, 0.12);
     stroke-width: 0.5rem;
     transform-origin: 50% 50%;
     transform: rotate(-90deg);
@@ -1050,9 +1062,10 @@ code {
 .loading-progress-text {
     position: absolute;
     text-align: center;
-    font-family: 'Courier New', monospace;
-    font-size: 0.75rem;
-    letter-spacing: 0.18em;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.62rem;
+    font-weight: 300;
+    letter-spacing: 0.3em;
     text-transform: uppercase;
     color: var(--text-muted);
     inset: calc(20vh + 3.25rem) 0 auto 0.2rem;
@@ -1060,12 +1073,12 @@ code {
 .loading-progress-text::after { content: var(--blazor-load-percentage-text, "LOADING"); }
 
 /* =====================================================
-   Nav — Hire Me highlight
+   Nav — Freelance highlight
    ===================================================== */
 .nav-links a.nav-hireme,
 .nav-mobile a.nav-hireme {
     color: var(--jp-yellow);
-    font-weight: 700;
+    font-weight: 600;
 }
 .nav-links a.nav-hireme:hover,
 .nav-links a.nav-hireme.active,
@@ -1080,7 +1093,7 @@ code {
 }
 
 /* =====================================================
-   Hire Me page
+   Hire Me / Freelance page
    ===================================================== */
 .hireme-intro {
     text-align: center;
@@ -1090,19 +1103,20 @@ code {
 }
 
 .hireme-headline {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(2rem, 5vw, 3.2rem);
+    font-family: 'Poiret One', sans-serif;
+    font-size: clamp(2rem, 5vw, 3.5rem);
     font-weight: 400;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.14em;
     color: var(--lime-light);
     margin-bottom: 1rem;
+    text-transform: uppercase;
 }
 
 .hireme-sub {
     font-size: 1rem;
     color: var(--text-muted);
-    line-height: 1.7;
-    letter-spacing: 0.03em;
+    line-height: 1.82;
+    letter-spacing: 0.02em;
 }
 
 /* Why grid */
@@ -1120,32 +1134,33 @@ code {
     gap: 1rem;
     align-items: flex-start;
     background: var(--bg-card);
-    padding: 1.4rem 1.5rem;
+    padding: 1.5rem 1.75rem;
     transition: background 0.2s;
 }
 .hireme-why-card:hover { background: var(--bg-card-alt); }
 
 .hireme-why-icon {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     flex-shrink: 0;
     line-height: 1.2;
-    filter: drop-shadow(0 0 5px rgba(200, 160, 96, 0.35));
+    filter: drop-shadow(0 0 5px rgba(0, 176, 178, 0.28));
+    opacity: 0.82;
 }
 
 .hireme-why-card h3 {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 1rem;
+    font-family: 'Poiret One', sans-serif;
+    font-size: 1.05rem;
     font-weight: 400;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
     color: var(--lime);
-    margin-bottom: 0.35rem;
+    margin-bottom: 0.4rem;
 }
 
 .hireme-why-card p {
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     color: var(--text-muted);
-    line-height: 1.65;
+    line-height: 1.7;
     margin: 0;
 }
 
@@ -1158,51 +1173,55 @@ code {
     align-items: start;
 }
 
+/* Double-frame via inset box-shadow — signature Art Deco mat border */
 .hireme-package {
     background: var(--bg-card);
     border: 1px solid var(--border-lime);
-    border-top: 3px solid var(--lime);
+    border-top: 2px solid var(--lime);
     padding: 1.75rem;
     position: relative;
     overflow: hidden;
     display: flex;
     flex-direction: column;
     gap: 1.25rem;
+    box-shadow:
+        inset 0 0 0 8px var(--bg-card),
+        inset 0 0 0 9px rgba(0, 176, 178, 0.055);
 }
 
 .hireme-package::before {
     content: '';
     position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 3px;
-    background: repeating-linear-gradient(
-        90deg,
-        var(--jp-yellow) 0px, var(--jp-yellow) 10px,
-        #000            10px, #000            20px
-    );
+    top: 2px; left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(0, 176, 178, 0.22) 50%, transparent);
     opacity: 0;
     transition: opacity 0.3s;
 }
-.hireme-package:hover::before { opacity: 0.4; }
+.hireme-package:hover::before { opacity: 1; }
 
 .hireme-package--featured {
-    border-color: var(--jp-yellow);
+    border-color: var(--border-yellow);
     border-top-color: var(--jp-yellow);
-    box-shadow: 0 0 30px rgba(200, 144, 48, 0.1), inset 0 0 40px rgba(200, 144, 48, 0.03);
+    box-shadow:
+        0 0 30px rgba(104, 143, 173, 0.08),
+        inset 0 0 0 8px var(--bg-card),
+        inset 0 0 0 9px rgba(104, 143, 173, 0.06);
 }
 
 .hireme-package-badge {
     display: inline-block;
-    padding: 0.15rem 0.65rem;
-    font-family: 'Courier New', monospace;
-    font-size: 0.68rem;
-    font-weight: 700;
-    letter-spacing: 0.14em;
+    padding: 0.15rem 0.8rem;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.58rem;
+    font-weight: 600;
+    letter-spacing: 0.22em;
     color: #000;
     background: var(--jp-yellow);
     box-shadow: var(--glow-yellow);
     align-self: flex-start;
     margin-top: -0.25rem;
+    text-transform: uppercase;
 }
 
 .hireme-package-header {
@@ -1213,37 +1232,36 @@ code {
 }
 
 .hireme-package-name {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 1.6rem;
+    font-family: 'Poiret One', sans-serif;
+    font-size: 1.75rem;
     font-weight: 400;
-    letter-spacing: 0.12em;
+    letter-spacing: 0.14em;
     color: var(--text);
     line-height: 1;
-    margin-bottom: 0.3rem;
+    margin-bottom: 0.35rem;
+    text-transform: uppercase;
 }
 
 .hireme-package-tagline {
-    font-size: 0.82rem;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.65rem;
+    font-weight: 300;
     color: var(--text-muted);
-    letter-spacing: 0.04em;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
 }
 
 .hireme-package-price {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 1.8rem;
+    font-family: 'Poiret One', sans-serif;
+    font-size: 2.1rem;
     font-weight: 400;
     color: var(--lime);
     white-space: nowrap;
     letter-spacing: 0.06em;
     flex-shrink: 0;
 }
-.hireme-package--featured .hireme-package-price {
-    color: var(--jp-yellow);
-}
-.hireme-package-price span {
-    font-size: 1rem;
-    opacity: 0.7;
-}
+.hireme-package--featured .hireme-package-price { color: var(--jp-yellow); }
+.hireme-package-price span { font-size: 1rem; opacity: 0.7; }
 
 .hireme-package-list {
     list-style: none;
@@ -1254,45 +1272,45 @@ code {
 }
 
 .hireme-package-list li {
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     color: var(--text);
-    padding-left: 1.25rem;
+    padding-left: 1.5rem;
     position: relative;
-    line-height: 1.5;
+    line-height: 1.6;
 }
 
 .hireme-package-list li::before {
-    content: '▸';
+    content: '◆';
     position: absolute;
     left: 0;
     color: var(--lime);
+    font-size: 0.42rem;
+    top: 0.52rem;
 }
-.hireme-package--featured .hireme-package-list li::before {
-    color: var(--jp-yellow);
-}
+.hireme-package--featured .hireme-package-list li::before { color: var(--jp-yellow); }
 
 .hireme-package-best {
-    font-size: 0.82rem;
+    font-size: 0.92rem;
     color: var(--text-muted);
     font-style: italic;
-    line-height: 1.55;
-    border-left: 2px solid var(--border-lime);
-    padding-left: 0.75rem;
+    line-height: 1.62;
+    border-left: 1px solid var(--border-lime);
+    padding-left: 0.85rem;
     margin: 0;
 }
 
 /* CTA button */
 .hireme-cta {
     display: inline-block;
-    padding: 0.55rem 1.4rem;
-    font-family: 'Rajdhani', sans-serif;
-    font-size: 0.85rem;
-    font-weight: 700;
-    letter-spacing: 0.14em;
+    padding: 0.6rem 1.5rem;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.22em;
     text-transform: uppercase;
     color: var(--lime);
     border: 1px solid var(--border-lime);
-    background: rgba(200, 160, 96, 0.07);
+    background: rgba(0, 176, 178, 0.055);
     transition: all 0.2s;
     text-align: center;
     cursor: pointer;
@@ -1300,7 +1318,7 @@ code {
 .hireme-cta:hover {
     color: var(--lime-bright);
     border-color: var(--lime);
-    background: rgba(200, 160, 96, 0.14);
+    background: rgba(0, 176, 178, 0.1);
     box-shadow: var(--glow-lime);
     text-shadow: none;
 }
@@ -1308,21 +1326,21 @@ code {
 .hireme-cta--featured {
     color: #000;
     background: var(--jp-yellow);
-    border-color: rgba(200, 144, 48, 0.8);
+    border-color: rgba(104, 143, 173, 0.8);
     box-shadow: var(--glow-yellow);
 }
 .hireme-cta--featured:hover {
     color: #000;
-    background: #D4A843;
-    box-shadow: 0 0 18px rgba(200,144,48,0.9), 0 0 40px rgba(200,144,48,0.4);
+    background: #7BA8C8;
+    box-shadow: 0 0 18px rgba(104, 143, 173, 0.9), 0 0 40px rgba(104, 143, 173, 0.35);
     text-shadow: none;
     border-color: var(--jp-yellow);
 }
 
 .hireme-cta--large {
-    padding: 0.8rem 2.5rem;
-    font-size: 1rem;
-    letter-spacing: 0.1em;
+    padding: 0.85rem 2.75rem;
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
 }
 
 /* How It Works steps */
@@ -1345,52 +1363,52 @@ code {
 }
 
 .hireme-step-num {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 2.5rem;
+    font-family: 'Poiret One', sans-serif;
+    font-size: 2.2rem;
     font-weight: 400;
     color: var(--lime);
     letter-spacing: 0.08em;
     line-height: 1;
-    width: 64px;
-    height: 64px;
-    border: 2px solid var(--border-lime);
+    width: 62px;
+    height: 62px;
+    border: 1px solid var(--border-lime);
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 0 16px rgba(200, 160, 96, 0.15);
+    box-shadow: 0 0 14px rgba(0, 176, 178, 0.1);
     flex-shrink: 0;
 }
 
 .hireme-step-body h3 {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 1.05rem;
+    font-family: 'Poiret One', sans-serif;
+    font-size: 1rem;
     font-weight: 400;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
     color: var(--text);
     margin-bottom: 0.35rem;
 }
 
 .hireme-step-body p {
-    font-size: 0.88rem;
+    font-size: 0.92rem;
     color: var(--text-muted);
-    line-height: 1.6;
+    line-height: 1.65;
     margin: 0;
 }
 
 .hireme-step-connector {
     flex: 0 0 2rem;
-    height: 2px;
-    background: linear-gradient(to right, var(--lime), var(--jp-red));
+    height: 1px;
+    background: linear-gradient(to right, var(--lime), rgba(0, 176, 178, 0.2));
     align-self: center;
     margin-bottom: 3.5rem;
-    opacity: 0.5;
+    opacity: 0.45;
 }
 
 /* Contact CTA */
 .hireme-contact {
     border: 1px solid var(--border-lime);
-    border-top: 3px solid var(--lime);
+    border-top: 2px solid var(--lime);
     background: var(--bg-card);
     position: relative;
     overflow: hidden;
@@ -1399,14 +1417,9 @@ code {
 .hireme-contact::before {
     content: '';
     position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 3px;
-    background: repeating-linear-gradient(
-        90deg,
-        var(--jp-yellow) 0px, var(--jp-yellow) 10px,
-        #000            10px, #000            20px
-    );
-    opacity: 0.45;
+    top: 2px; left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(0, 176, 178, 0.22) 50%, transparent);
 }
 
 .hireme-contact-inner {
@@ -1419,17 +1432,19 @@ code {
 }
 
 .hireme-contact-heading {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 2rem;
+    font-family: 'Poiret One', sans-serif;
+    font-size: 2.1rem;
     font-weight: 400;
-    letter-spacing: 0.12em;
+    letter-spacing: 0.14em;
     color: var(--lime-light);
+    text-transform: uppercase;
 }
 
 .hireme-contact-sub {
-    font-size: 0.95rem;
+    font-size: 0.98rem;
     color: var(--text-muted);
     margin: 0;
+    line-height: 1.75;
 }
 
 /* Payment options inside a package card */
@@ -1440,25 +1455,18 @@ code {
     border: 1px solid var(--border-lime);
 }
 
-.hireme-package--featured .hireme-payment-options {
-    border-color: var(--border-yellow);
-}
+.hireme-package--featured .hireme-payment-options { border-color: var(--border-yellow); }
 
-.hireme-payment {
-    padding: 1rem 1.25rem;
-}
+.hireme-payment { padding: 1rem 1.25rem; }
 
-.hireme-payment--preferred {
-    background: rgba(200, 160, 96, 0.05);
-}
-.hireme-package--featured .hireme-payment--preferred {
-    background: rgba(200, 144, 48, 0.06);
-}
+.hireme-payment--preferred { background: rgba(0, 176, 178, 0.04); }
+.hireme-package--featured .hireme-payment--preferred { background: rgba(104, 143, 173, 0.05); }
 
 .hireme-payment-label {
-    font-family: 'Courier New', monospace;
-    font-size: 0.72rem;
-    letter-spacing: 0.1em;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.65rem;
+    font-weight: 300;
+    letter-spacing: 0.16em;
     text-transform: uppercase;
     color: var(--text-muted);
     margin-bottom: 0.3rem;
@@ -1469,60 +1477,63 @@ code {
 
 .hireme-payment-note {
     color: var(--jp-yellow);
-    font-size: 0.65rem;
-    letter-spacing: 0.08em;
-    border: 1px solid rgba(200, 144, 48, 0.4);
+    font-size: 0.6rem;
+    font-weight: 600;
+    font-family: 'Josefin Sans', sans-serif;
+    letter-spacing: 0.1em;
+    border: 1px solid rgba(104, 143, 173, 0.38);
     padding: 0.05rem 0.35rem;
+    text-transform: uppercase;
 }
 
 .hireme-payment-desc {
-    font-size: 0.82rem;
+    font-size: 0.88rem;
     color: var(--text-muted);
-    line-height: 1.55;
+    line-height: 1.6;
     margin: 0.35rem 0 0;
 }
 
 .hireme-payment-divider {
     text-align: center;
-    font-family: 'Courier New', monospace;
-    font-size: 0.75rem;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.65rem;
+    font-weight: 300;
     color: var(--text-muted);
     padding: 0.5rem 0;
-    border-top: 1px solid rgba(200, 160, 96, 0.1);
-    border-bottom: 1px solid rgba(200, 160, 96, 0.1);
-    letter-spacing: 0.1em;
+    border-top: 1px solid rgba(0, 176, 178, 0.08);
+    border-bottom: 1px solid rgba(0, 176, 178, 0.08);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
 }
 
-.hireme-package--featured .hireme-payment-divider {
-    border-color: rgba(200, 144, 48, 0.12);
-}
+.hireme-package--featured .hireme-payment-divider { border-color: rgba(104, 143, 173, 0.1); }
 
 /* Year 2 renewal block */
 .hireme-renewal {
     border: 1px solid var(--border-lime);
     padding: 0.9rem 1.25rem;
-    background: rgba(200, 160, 96, 0.04);
+    background: rgba(0, 176, 178, 0.03);
 }
 
 .hireme-package--featured .hireme-renewal {
     border-color: var(--border-yellow);
-    background: rgba(200, 144, 48, 0.04);
+    background: rgba(104, 143, 173, 0.035);
 }
 
 .hireme-renewal-label {
-    font-family: 'Courier New', monospace;
-    font-size: 0.72rem;
-    letter-spacing: 0.12em;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.62rem;
+    font-weight: 300;
+    letter-spacing: 0.18em;
     text-transform: uppercase;
     color: var(--lime);
     margin-bottom: 0.25rem;
 }
-
 .hireme-package--featured .hireme-renewal-label { color: var(--jp-yellow); }
 
 .hireme-renewal-price {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 1.6rem;
+    font-family: 'Poiret One', sans-serif;
+    font-size: 1.7rem;
     font-weight: 400;
     color: var(--lime);
     letter-spacing: 0.06em;
@@ -1530,31 +1541,23 @@ code {
     margin-bottom: 0.25rem;
 }
 .hireme-package--featured .hireme-renewal-price { color: var(--jp-yellow); }
-
 .hireme-renewal-price span { font-size: 0.9rem; opacity: 0.7; }
 
-.hireme-renewal-options {
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-}
-
-.hireme-renewal-option {
-    padding: 0.5rem 0;
-}
+.hireme-renewal-options { display: flex; flex-direction: column; gap: 0; }
+.hireme-renewal-option { padding: 0.5rem 0; }
 
 .hireme-renewal-option-divider {
-    font-size: 0.75rem;
+    font-size: 0.72rem;
     color: var(--text-muted);
-    opacity: 0.6;
+    opacity: 0.5;
     text-align: center;
     padding: 0.1rem 0;
 }
 
 .hireme-renewal p {
-    font-size: 0.8rem;
+    font-size: 0.85rem;
     color: var(--text-muted);
-    line-height: 1.5;
+    line-height: 1.55;
     margin: 0;
 }
 
@@ -1564,16 +1567,16 @@ code {
     align-items: center;
     gap: 0.5rem;
     margin-top: 0.6rem;
-    font-family: 'Courier New', monospace;
-    font-size: 0.72rem;
-    letter-spacing: 0.06em;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.65rem;
+    font-weight: 300;
+    letter-spacing: 0.08em;
     color: var(--jp-yellow);
     flex-wrap: wrap;
+    text-transform: uppercase;
 }
 
-.hireme-payment-split-div {
-    color: var(--text-muted);
-}
+.hireme-payment-split-div { color: var(--text-muted); }
 
 /* Stripe notice */
 .hireme-stripe-note {
@@ -1584,35 +1587,34 @@ code {
     padding: 0.9rem 1.25rem;
     background: var(--bg-card);
     border: 1px solid var(--border-lime);
-    border-left: 3px solid var(--lime);
+    border-left: 2px solid var(--lime);
     color: var(--text-muted);
-    font-size: 0.85rem;
-    line-height: 1.55;
+    font-size: 0.9rem;
+    line-height: 1.6;
 }
 
 .hireme-stripe-badge {
     flex-shrink: 0;
-    font-family: 'Courier New', monospace;
-    font-size: 0.95rem;
-    font-weight: 700;
-    letter-spacing: 0.06em;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
     color: #635bff;
-    border: 1px solid rgba(99, 91, 255, 0.4);
+    border: 1px solid rgba(99, 91, 255, 0.38);
     padding: 0.1rem 0.5rem;
-    text-shadow: 0 0 10px rgba(99, 91, 255, 0.5);
+    text-shadow: 0 0 10px rgba(99, 91, 255, 0.45);
     white-space: nowrap;
+    text-transform: uppercase;
 }
 
-.hireme-stripe-note strong {
-    color: var(--lime);
-}
+.hireme-stripe-note strong { color: var(--lime); }
 
 @media (max-width: 700px) {
-    .hireme-packages { grid-template-columns: 1fr; }
-    .hireme-why-grid { grid-template-columns: 1fr; }
+    .hireme-packages    { grid-template-columns: 1fr; }
+    .hireme-why-grid    { grid-template-columns: 1fr; }
     .hireme-step-connector { display: none; }
     .hireme-steps { flex-direction: column; align-items: stretch; gap: 1.5rem; }
-    .hireme-step { flex-direction: row; text-align: left; }
+    .hireme-step  { flex-direction: row; text-align: left; }
     .hireme-step-num { font-size: 1.8rem; width: 50px; height: 50px; flex-shrink: 0; }
 }
 
@@ -1622,7 +1624,7 @@ code {
 .home-page {
     display: flex;
     flex-direction: column;
-    height: calc(100vh - 62px);
+    height: calc(100vh - 64px);
 }
 
 .home-page .hero {
@@ -1655,7 +1657,7 @@ code {
    Responsive
    ===================================================== */
 @media (max-width: 700px) {
-    .nav-links   { display: none; }
+    .nav-links     { display: none; }
     .nav-hamburger { display: flex; }
 
     .hero { padding: 4.5rem 1.25rem 3rem; }
@@ -1666,7 +1668,7 @@ code {
     .quick-links { grid-template-columns: 1fr; }
 
     .timeline::before { left: -0.5rem; }
-    .timeline-marker  { left: calc(-1.25rem + 3px); }
+    .timeline-marker  { left: calc(-1.5rem + 3px); }
     .job-header       { flex-direction: column; }
 
     .edu-card { flex-direction: column; gap: 1rem; }
